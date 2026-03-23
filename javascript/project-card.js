@@ -26,3 +26,14 @@ projectCards.forEach(card => {
         card.style.transition = 'transform 0.1s ease'; // Smoothly apply the transform
     }); 
 });
+
+// Optional: Add a slight shadow effect on hover for better visual feedback
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = 'none';
+    });
+});
