@@ -8,6 +8,7 @@ projectCards.forEach(card => {
     card.addEventListener('mouseleave', () => {
         card.classList.remove('hovered');
         card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        card.style.transition = 'transform 0.5s ease'; // Smoothly reset the transform
     });
 
     card.addEventListener('mousemove', (e) => {
@@ -18,9 +19,10 @@ projectCards.forEach(card => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / rect.height) * 10; // Adjust the multiplier for more/less tilt
-        const rotateY = ((x - centerX) / rect.width) * -10; // Adjust the multiplier for more/less tilt
+        const rotateX = ((y - centerY) / rect.height) * 20; // Adjust the multiplier for more/less tilt
+        const rotateY = ((x - centerX) / rect.width) * -50; // Adjust the multiplier for more/less tilt
 
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.transition = 'transform 0.1s ease'; // Smoothly apply the transform
     }); 
 });
